@@ -1,31 +1,27 @@
 version: "3.3"
 
 services:
-  api:
-    container_name: express_api
-    restart: unless-stopped
-    image: express-api:1.0.0
-    build:
-      context: server
-      dockerfile: Dockerfile
+  react-app:
+    image: react-app
+    stdin_open: true
     ports:
-      - 3001:3001
+      - "80:3000"
     networks:
       - shared-network
-
-  client:
-    container_name: react_api
-    restart: unless-stopped
-    image: react-client:1.0.0
     build:
       context: client
       dockerfile: Dockerfile
+
+  api-server:
+    image: api-server
     ports:
-      - 80:3000
+      - "3001:3001"
     networks:
       - shared-network
-    depends_on:
-      - api
+    build:
+      context: server
+      dockerfile: Dockerfile
 
 networks:
   shared-network:
+    driver: bridge
