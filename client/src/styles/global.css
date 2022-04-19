@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.entryCard {
+  transition: transform 0.2s;
+}
+
+.entryCard:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
