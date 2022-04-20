@@ -43,3 +43,14 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [Express.js](https://expressjs.com/pt-br/)
 - [Axios](https://axios-http.com/ptbr/docs/intro)
 - [React Router](https://reactrouter.com/)
+
+### Docker
+
+É possível utilizar a aplicação atráves de containers docker utilizando orquestração de containers.
+
+
+```sh
+cd desafio-4linux
+docker-compose build
+docker-compose up
+```
